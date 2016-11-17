@@ -1,0 +1,15 @@
+static var ammo = 100;
+var key : String = "mouse 0";
+var bullet : Rigidbody;
+var speed : float = 1000;
+
+function Update () {
+if(Input.GetKeyDown(key)){
+shoot();
+   }
+}
+function shoot(){
+   var bullet1 : Rigidbody = Instantiate(bullet, transform.position, transform.rotation);
+   bullet1.AddForce(transform.forward * speed);
+   ammo --;
+   }
